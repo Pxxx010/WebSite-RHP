@@ -20,8 +20,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
-  }
+    position: relative;
+    z-index: 1;  /* Garante que a navbar ficará atrás do sidebar */    
+}
    
 /*LoginForm*/
 .container {
@@ -110,33 +111,43 @@ button[type="submit"]:hover {
 
 /*SisContigencia*/
 .main-content {
-  margin-top: -30px;
-  margin-left: -50px;
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  flex: 1;
+  height: 100vh;
+  padding: 20px;
   background-color: transparent;
+  margin: 0;
+}
+
+html, body {
+  height: 100%; /* Garante que o corpo ocupe toda a altura da janela */
+  margin: 0; /* Remove qualquer margem */
+  padding: 0; /* Remove qualquer padding */
+  overflow: hidden; /* Esconde o scroll */
 }
 
 .form-card {
   background-color: #F5F5F5;
-  width: 550px;
+  width: 100%;
+  max-width: 550px;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-
+  padding: 20px;
+  position: absolute; /* Permite que você controle a posição */
+  top: 48%; /* Coloca o card a 50% da altura do contêiner pai */
+  left: 50%; /* Coloca o card a 50% da largura do contêiner pai */
+  transform: translate(-50%, -50%); /* Ajusta o card para que seu centro fique exatamente na posição desejada */
 }
 
 .form-card h3 {
   background-color: #006035;
   color: #fff;
-  padding: px;
+  padding: 10px;
   border-radius: 8px 8px 0 0;
-  margin-top: 0px;
- 
-
+  margin-top: 0;
 }
 
 .form-group {
@@ -177,59 +188,3 @@ button {
 button:hover {
   background-color: #02b363;
 }
-
-.AjusteSideBar {
-  display: flex; 
-  flex-direction: row; 
-}
-
-.sidebar {
-    width: 270px;
-    background-color: #014e2b;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-    color: #fff;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    margin-top: -5px;
-     
-  }
-  
-  .sidebar-section {
-    background-color: #ffffff; 
-    color: #004d00; 
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 15px;
-  }
-  
-  .sidebar-section:first-child {
-    flex-grow: 1; 
-  }
-  
-  .sidebar-section h3 {
-    margin-bottom: 20px;
-    font-size: 20px;
-    color: black;
-    margin-left: 10px;
-    font-weight: bold;
-
-  }
-  
-  .sidebar-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar-section ul li {
-    margin: 10px 0;
-    cursor: pointer;
-  }
-  
-  .sidebar-section ul li:hover {
-    text-decoration: underline;
-  }
-  
-  

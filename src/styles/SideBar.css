@@ -1,0 +1,85 @@
+/* Ajuste do layout */
+.AjusteSideBar {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;  /* Garante que a barra lateral ocupe toda a altura da tela */
+  }
+  
+  /* Sidebar container */
+  .sidebar {
+    width: 270px;  /* Ajustado para a largura desejada */
+    background-color: #014e2b;  /* Cor de fundo ajustada */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);  /* Sombras para dar destaque */
+    color: #fff;  /* Cor do texto */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;  /* Preenche a altura total da janela */
+    position: fixed;  /* Mantém o sidebar fixo ao lado */
+    top: 0;
+    left: 0;
+    z-index: 10;  /* Garante que o sidebar ficará acima de outros elementos */
+    border-radius: 0px 40px 40px 0px;
+  }
+  
+  /* Sidebar section */
+  .sidebar-section {
+    background-color: #ffffff;  /* Cor de fundo clara nas seções */
+    color: #004d00;  /* Cor do texto nas seções */
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* Sombra suave nas seções */
+    margin-bottom: 15px;  /* Espaçamento entre as seções */
+  }
+  
+  /* Título das seções */
+  .sidebar-section h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: black;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  
+  /* Lista de itens do sidebar */
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Item do sidebar */
+  .sidebar-item {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Efeito de hover */
+  .sidebar-item:hover {
+    background-color: #34495e;
+  }
+  
+  /* Efeito ativo */
+  .sidebar-item:active {
+    background-color: #1abc9c;
+  }
+  
+  /* Estilo para o item de logout */
+  .sidebar-item.logout {
+    color: #e74c3c;  /* Cor vermelha para logout */
+  }
+  
+  /* Efeito de hover para o item de logout */
+  .sidebar-item.logout:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Seção principal do conteúdo ao lado do sidebar */
+  .main-content {
+    flex-grow: 1;  /* Faz o conteúdo principal ocupar o espaço restante */
+    padding: 20px;
+    margin-left: 270px;  /* Garante que o conteúdo não sobreponha o sidebar */
+  }
+  
