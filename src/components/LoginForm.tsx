@@ -4,8 +4,8 @@ import { FaUser, FaLock } from "react-icons/fa";
 import Image from 'next/image';
 
 const LoginForm: React.FC = () => {
-  const [username, setUsername] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const [username, setUsername] = useState<string>('admin');
+  const [password, setPassword] = useState<string>('1234');
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
@@ -18,7 +18,7 @@ const LoginForm: React.FC = () => {
         } else {
           reject(new Error("Usuário ou senha inválidos."));
         }
-      }, 1000); // Simula atraso do servidor
+      }, 1); // Simula atraso do servidor
     });
   };
 
@@ -29,7 +29,7 @@ const LoginForm: React.FC = () => {
     try {
       const response = await fakeLogin(username, password);
 
-      alert(`Login bem-sucedido! Token: ${response.token}`);
+      // alert(`Login bem-sucedido! Token: ${response.token}`);
       console.log("Login bem-sucedido:", response);
 
       router.push('/SistemaContigencia');
@@ -62,7 +62,7 @@ const LoginForm: React.FC = () => {
         </div>
 
         <div className="input-group">
-          <p>LOGIN</p>
+          <p>Usuário</p>
           <div className="input-with-icon">
             <FaUser className="icon" />
             <input
@@ -76,7 +76,7 @@ const LoginForm: React.FC = () => {
         </div>
 
         <div className="input-group">
-          <p>SENHA</p>
+          <p>Senha</p>
           <div className="input-with-icon">
             <FaLock className="icon" />
             <input
